@@ -53,6 +53,9 @@ assembled_df = assembler.transform(encoded_df).select("features", "label")
 
 # Step 5: Split the data into training and testing sets
 train_data, test_data = assembled_df.randomSplit([0.7, 0.3])
+print("Training rows:", train_data.count())
+print("Testing rows:", test_data.count())
+
 
 # Step 6: Initialize and train a Logistic Regression model
 lr = LogisticRegression(
